@@ -9,12 +9,21 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
+import androidx.navigation.fragment.NavHostFragment
 import com.example.frikishop.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    lateinit var navHost: NavHostFragment
+    val database by lazy{ BaseDatos.getDatabase(this) }
+    val miRepositorio by lazy{ Repositorio(database.miDao()) }
+    val miViewModel: vm by viewModels { CineViewModelFactory(miRepositorio)}
+    val vm:vm by viewModels()
+    //val miViewModel: vm by viewModels { CineViewModelFactory(miRepositorio)}
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,10 +53,13 @@ class MainActivity : AppCompatActivity() {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        return when (item.itemId) {
-            R.id.action_settings -> true
+        navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        when (item.itemId) {
+            R.id.new_figura -> navHost.navController.navigate(R.id.action_FirstFragment_to_newFiguraFragment)
+            R.id.new_user -> navHost.navController.navigate(R.id.action_FirstFragment_to_newUserFragment)
             else -> super.onOptionsItemSelected(item)
         }
+        return true
     }
 
     override fun onSupportNavigateUp(): Boolean {

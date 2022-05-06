@@ -42,12 +42,12 @@ interface DaoAplicacion {
     fun BuscarPedido(id: Int): Flow<Pedido>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun InsertPedido(word: User)
+    suspend fun InsertPedido(word: Pedido)
 
     @Update
-    suspend fun ActualizarPedido(word: User)
+    suspend fun ActualizarPedido(word: Pedido)
 
     @Delete
-    suspend fun BorrarPedido(word: User)
+    suspend fun BorrarPedido(word: Pedido)
 
 }

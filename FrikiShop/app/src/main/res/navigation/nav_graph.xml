@@ -14,6 +14,12 @@
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_newFiguraFragment"
+            app:destination="@id/newFiguraFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -45,5 +51,23 @@
         <action
             android:id="@+id/action_carritoFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newUserFragment"
+        android:name="com.example.frikishop.NewUserFragment"
+        android:label="fragment_new_user"
+        tools:layout="@layout/fragment_new_user" >
+        <action
+            android:id="@+id/action_newUserFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFiguraFragment"
+        android:name="com.example.frikishop.NewFiguraFragment"
+        android:label="fragment_new_figura"
+        tools:layout="@layout/fragment_new_figura" >
+        <action
+            android:id="@+id/action_newFiguraFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
