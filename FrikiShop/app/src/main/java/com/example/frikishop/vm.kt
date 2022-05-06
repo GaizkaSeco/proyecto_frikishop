@@ -19,6 +19,30 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
     fun Actualizar (miUser: User) = viewModelScope.launch {
         miRepositiorio.Actualizar(miUser)
     }
+
+    fun Insertar (miFigura: Figura) = viewModelScope.launch {
+        miRepositiorio.Insertar(miFigura)
+    }
+
+    fun Borrar (miFigura: Figura) = viewModelScope.launch {
+        miRepositiorio.Borrar(miFigura)
+    }
+
+    fun Actualizar (miFigura: Figura) = viewModelScope.launch {
+        miRepositiorio.Actualizar(miFigura)
+    }
+
+    fun Insertar (miPedido: Pedido) = viewModelScope.launch {
+        miRepositiorio.Insertar(miPedido)
+    }
+
+    fun Borrar (miPedido: Pedido) = viewModelScope.launch {
+        miRepositiorio.Borrar(miPedido)
+    }
+
+    fun Actualizar (miPedido: Pedido) = viewModelScope.launch {
+        miRepositiorio.Actualizar(miPedido)
+    }
 }
 
 class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {

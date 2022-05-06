@@ -11,7 +11,5 @@ data class Figura(
     @NonNull @ColumnInfo (name = "nombre") val nombre: String = "",
     @NonNull @ColumnInfo (name = "dimensiones") val dimensiones: String = "",
     @NonNull @ColumnInfo (name = "coste") val coste: Double = 0.0,
-    @NonNull @ColumnInfo (name = "altura") val altura: Double = 0.0,
-    @NonNull @ColumnInfo (name = "anchura") val anchura: Double = 0.0,
 ) {
 }
