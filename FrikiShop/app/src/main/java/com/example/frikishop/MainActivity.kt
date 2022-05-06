@@ -10,8 +10,11 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import com.example.frikishop.databinding.ActivityMainBinding
+import java.lang.IllegalArgumentException
 
 class MainActivity : AppCompatActivity() {
 
@@ -66,5 +69,15 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+}
+
+class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
+    override fun <T: ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(vm::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return vm(repositorio) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel Class")
     }
 }

@@ -70,4 +70,9 @@
             android:id="@+id/action_newFiguraFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/layoutContenedor"
+        android:name="com.example.frikishop.LayoutContenedor"
+        android:label="fragment_layout_contenedor"
+        tools:layout="@layout/fragment_layout_contenedor" />
 </navigation>

@@ -5,6 +5,7 @@ import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
 class vm(private val miRepositiorio:Repositorio): ViewModel() {
+    val figura: LiveData<List<Figura>> = miRepositiorio.listaFiguras.asLiveData()
     val users: LiveData<List<User>> = miRepositiorio.listaUsers.asLiveData()
     lateinit var miUser: LiveData<User>
 
@@ -42,15 +43,5 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
 
     fun Actualizar (miPedido: Pedido) = viewModelScope.launch {
         miRepositiorio.Actualizar(miPedido)
-    }
-}
-
-class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
-    override fun <T: ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(vm::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return vm(repositorio) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel Class")
     }
 }
