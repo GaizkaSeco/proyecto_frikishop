@@ -22,10 +22,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var navHost: NavHostFragment
     val database by lazy{ BaseDatos.getDatabase(this) }
+    val vm:vm by viewModels()
     val miRepositorio by lazy{ Repositorio(database.miDao()) }
     val miViewModel: vm by viewModels { CineViewModelFactory(miRepositorio)}
-    val vm:vm by viewModels()
-    //val miViewModel: vm by viewModels { CineViewModelFactory(miRepositorio)}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -69,15 +68,5 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
-    }
-}
-
-class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
-    override fun <T: ViewModel> create(modelClass: Class<T>): T {
-        if (modelClass.isAssignableFrom(vm::class.java)) {
-            @Suppress("UNCHECKED_CAST")
-            return vm(repositorio) as T
-        }
-        throw IllegalArgumentException("Unknown ViewModel Class")
     }
 }

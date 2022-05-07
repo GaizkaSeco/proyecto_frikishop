@@ -45,3 +45,14 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
         miRepositiorio.Actualizar(miPedido)
     }
 }
+
+
+class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
+    override fun <T: ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(vm::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return vm(repositorio) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel Class")
+    }
+}
