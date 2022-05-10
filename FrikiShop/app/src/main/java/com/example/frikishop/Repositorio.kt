@@ -8,6 +8,10 @@ class Repositorio(val miDao: DaoAplicacion) {
     val listaPedidos: Flow<List<Pedido>> = miDao.MostrarPedidos()
     val listaFiguras: Flow<List<Figura>> = miDao.MostrarFiguras()
 
+    suspend fun Mostrar() {
+        miDao.MostrarFiguras()
+    }
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun Insertar(miUser: User) {

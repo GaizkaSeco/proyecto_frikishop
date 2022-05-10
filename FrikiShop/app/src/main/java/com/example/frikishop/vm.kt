@@ -13,6 +13,10 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
         miRepositiorio.Insertar(miUser)
     }
 
+    fun MostrarFiguras () =viewModelScope.launch {
+        miRepositiorio.Mostrar()
+    }
+
     fun Borrar (miUser: User) = viewModelScope.launch {
         miRepositiorio.Borrar(miUser)
     }
