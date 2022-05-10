@@ -47,7 +47,7 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
 }
 
 
-class CineViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
+class AppViewModelFactory(private val repositorio: Repositorio ) : ViewModelProvider.Factory {
     override fun <T: ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(vm::class.java)) {
             @Suppress("UNCHECKED_CAST")

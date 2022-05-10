@@ -32,7 +32,7 @@ class NewUserFragment : Fragment() {
         binding.botonAnadir.setOnClickListener {
             if (binding.userName.text.isNotEmpty() && binding.contrasena.text.isNotEmpty() && binding.rol.text.isNotEmpty()) {
                 val user = User(nombre=binding.userName.text.toString(), contrasena= binding.contrasena.text.toString(), rol=binding.rol.text.toString())
-                (activity as MainActivity).vm.Insertar(user)
+                (activity as MainActivity).miViewModel.Insertar(user)
                 Toast.makeText(activity, "Añadido Correctamente", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_newUserFragment_to_FirstFragment)
             }

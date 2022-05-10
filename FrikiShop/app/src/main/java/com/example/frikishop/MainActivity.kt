@@ -22,9 +22,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     lateinit var navHost: NavHostFragment
     val database by lazy{ BaseDatos.getDatabase(this) }
-    val vm:vm by viewModels()
     val miRepositorio by lazy{ Repositorio(database.miDao()) }
-    val miViewModel: vm by viewModels { CineViewModelFactory(miRepositorio)}
+    val miViewModel: vm by viewModels { AppViewModelFactory(miRepositorio)}
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

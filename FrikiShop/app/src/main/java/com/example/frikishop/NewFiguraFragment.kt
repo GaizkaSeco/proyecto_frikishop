@@ -32,7 +32,7 @@ class NewFiguraFragment : Fragment() {
         binding.anadirFigura.setOnClickListener {
             if (binding.nombreFigura.text.isNotEmpty() && binding.dimensiones.text.isNotEmpty() && binding.coste.text.isNotEmpty()) {
                 val figura = Figura(nombre=binding.nombreFigura.text.toString(), dimensiones= binding.dimensiones.text.toString(), coste=binding.coste.text.toString().toDouble())
-                (activity as MainActivity).vm.Insertar(figura)
+                (activity as MainActivity).miViewModel.Insertar(figura)
                 Toast.makeText(activity, "Añadido Correctamente", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_newFiguraFragment_to_FirstFragment)
             }
