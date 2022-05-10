@@ -23,8 +23,8 @@ interface DaoAplicacion {
     @Query("SELECT * FROM tabla_users ORDER BY nombre ASC")
     fun MostrarUsers(): Flow<List<User>>
 
-    @Query("SELECT * FROM tabla_users WHERE id LIKE :id")
-    fun BuscarUser(id: Int): Flow<User>
+    @Query("SELECT * FROM tabla_users WHERE nombre LIKE :nombre AND contrasena LIKE :contrasena")
+    fun BuscarUser(nombre: String, contrasena: String): Flow<User>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun InsertUser(word: User)

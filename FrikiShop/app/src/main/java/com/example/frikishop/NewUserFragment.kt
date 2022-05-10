@@ -1,6 +1,7 @@
 package com.example.frikishop
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -35,6 +36,9 @@ class NewUserFragment : Fragment() {
                 (activity as MainActivity).miViewModel.Insertar(user)
                 Toast.makeText(activity, "Añadido Correctamente", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_newUserFragment_to_FirstFragment)
+                (activity as MainActivity).miViewModel.users.observe(activity as MainActivity) {
+                    Log.d("Usuarios", it.size.toString())
+                }
             }
         }
     }
