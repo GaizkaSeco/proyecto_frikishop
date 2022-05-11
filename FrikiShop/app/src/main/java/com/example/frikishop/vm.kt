@@ -9,6 +9,10 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
     val users: LiveData<List<User>> = miRepositiorio.listaUsers.asLiveData()
     lateinit var miUser: LiveData<User>
 
+    fun BuscarUser (nombre: String, contrasena: String) = viewModelScope.launch {
+        miRepositiorio.BuscarUser(nombre, contrasena)
+    }
+
     fun Insertar (miUser: User) = viewModelScope.launch {
         miRepositiorio.Insertar(miUser)
     }

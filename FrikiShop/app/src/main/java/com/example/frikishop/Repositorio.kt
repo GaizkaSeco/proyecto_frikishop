@@ -12,6 +12,10 @@ class Repositorio(val miDao: DaoAplicacion) {
         miDao.MostrarFiguras()
     }
 
+    suspend fun BuscarUser(nombre: String, contrasena: String) {
+        miDao.BuscarUser(nombre, contrasena)
+    }
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun Insertar(miUser: User) {
