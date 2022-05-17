@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -27,7 +28,12 @@ class Adaptador(var fragmento: Fragment, var figuras: List<Figura>, var activida
             buttonAnadir.setOnClickListener() {
                 actividad.miViewModel.BuscarFigura(posicion)
                 actividad.miViewModel.guardar.observe(actividad){
-                    actividad.miViewModel.carrito.add(actividad.miViewModel.guarda)
+                    actividad.miViewModel.carrito.add(it)
+                    Toast.makeText(
+                        actividad,
+                        "Añadido correctamente al carro",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
             }
         }

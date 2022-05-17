@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        miViewModel.users.observe(this) {
-            Log.d("Usuarios", it.size.toString())
+        miViewModel.figura.observe(this) {
+            Log.d("Figura", it.size.toString())
         }
 
         binding = ActivityMainBinding.inflate(layoutInflater)

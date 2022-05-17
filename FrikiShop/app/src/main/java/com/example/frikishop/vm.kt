@@ -10,7 +10,7 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
     lateinit var existe: LiveData<Int>
     lateinit var guardar: LiveData<Figura>
     lateinit var miUser: LiveData<User>
-    lateinit var carrito: MutableList<Figura>
+    var carrito: MutableList<Figura> = mutableListOf()
 
     fun BuscarUser (nombre: String, contrasena: String) = viewModelScope.launch {
         existe= miRepositiorio.BuscarUser(nombre, contrasena).asLiveData()
