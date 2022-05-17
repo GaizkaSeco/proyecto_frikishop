@@ -29,19 +29,21 @@ class LoginFragment : Fragment() {
         setHasOptionsMenu(true)
 
         binding.botonIniciar.setOnClickListener {
-            val result = (activity as MainActivity).miViewModel.BuscarUser(binding.etUsuario.text.toString(), binding.etContrasena.text.toString())
+            (activity as MainActivity).miViewModel.BuscarUser(binding.etUsuario.text.toString(), binding.etContrasena.text.toString())
+            (activity as MainActivity).miViewModel.existe.observe(activity as MainActivity){
+                if ( it == 1) {
 
-            if ( result.toString().toInt() == 1) {
+                    findNavController().navigate(R.id.action_loginFragment2_to_FirstFragment)
 
-                findNavController().navigate(R.id.action_loginFragment2_to_FirstFragment)
-
-            } else {
-                Toast.makeText(
-                    activity,
-                    "ERROR contraseña o usuario incorrecto.",
-                    Toast.LENGTH_SHORT
-                ).show()
+                } else {
+                    Toast.makeText(
+                        activity,
+                        "ERROR contraseña o usuario incorrecto.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             }
+
         }
     }
 

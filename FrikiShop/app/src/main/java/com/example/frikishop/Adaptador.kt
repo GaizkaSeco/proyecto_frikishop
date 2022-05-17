@@ -1,6 +1,7 @@
 package com.example.frikishop
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,7 @@ class Adaptador(var fragmento: Fragment, var figuras: List<Figura>): RecyclerVie
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        Log.d("figuras",figuras[position].nombre)
         holder.textNombre.text=figuras[position].nombre
         holder.textDiametro.text=figuras[position].dimensiones
         holder.textCoste.text=figuras[position].coste.toString()

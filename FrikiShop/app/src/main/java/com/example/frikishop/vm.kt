@@ -7,10 +7,11 @@ import java.lang.IllegalArgumentException
 class vm(private val miRepositiorio:Repositorio): ViewModel() {
     val figura: LiveData<List<Figura>> = miRepositiorio.listaFiguras.asLiveData()
     val users: LiveData<List<User>> = miRepositiorio.listaUsers.asLiveData()
+    lateinit var existe: LiveData<Int>
     lateinit var miUser: LiveData<User>
 
     fun BuscarUser (nombre: String, contrasena: String) = viewModelScope.launch {
-        miRepositiorio.BuscarUser(nombre, contrasena)
+        existe= miRepositiorio.BuscarUser(nombre, contrasena).asLiveData()
     }
 
     fun Insertar (miUser: User) = viewModelScope.launch {
