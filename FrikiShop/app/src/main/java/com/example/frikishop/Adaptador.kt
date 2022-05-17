@@ -5,25 +5,30 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
-class Adaptador(var fragmento: Fragment, var figuras: List<Figura>): RecyclerView.Adapter<Adaptador.ViewHolder>() {
+class Adaptador(var fragmento: Fragment, var figuras: List<Figura>, var actividad: MainActivity): RecyclerView.Adapter<Adaptador.ViewHolder>() {
     inner class ViewHolder(v: View):RecyclerView.ViewHolder(v){
         var textNombre: TextView
         var textCoste: TextView
         var textDiametro: TextView
         var posicion:Int =-1
+        var buttonAnadir: Button
         init{
             textNombre = v.findViewById(R.id.textNombre)
             textCoste = v.findViewById(R.id.textCoste)
             textDiametro = v.findViewById(R.id.textDiametro)
-            v.setOnClickListener() {
-                var bundle: Bundle = bundleOf("id" to posicion)
-                fragmento.findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
+            buttonAnadir = v.findViewById(R.id.buttonAnadir)
+            buttonAnadir.setOnClickListener() {
+                actividad.miViewModel.BuscarFigura(posicion)
+                actividad.miViewModel.guardar.observe(actividad){
+                    actividad.miViewModel.carrito.add(actividad.miViewModel.guarda)
+                }
             }
         }
     }

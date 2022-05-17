@@ -16,6 +16,10 @@ class Repositorio(val miDao: DaoAplicacion) {
         return miDao.BuscarUser(nombre, contrasena)
     }
 
+    fun BuscarFigura(posicion: Int): Flow<Figura> {
+        return miDao.BuscarFigura(posicion)
+    }
+
     @Suppress("RedundantSuspendModifier")
     @WorkerThread
     suspend fun Insertar(miUser: User) {

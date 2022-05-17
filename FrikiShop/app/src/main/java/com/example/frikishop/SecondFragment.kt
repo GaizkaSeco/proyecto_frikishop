@@ -40,7 +40,7 @@ class SecondFragment : Fragment() {
             Figura?.let {
                 Log.d("figuras",it.size.toString())
                 misFiguras = it
-                miRecyclerView.adapter = Adaptador(this, misFiguras)
+                miRecyclerView.adapter = Adaptador(this, misFiguras, (activity as MainActivity))
             }
         }
         binding.botonVolver.setOnClickListener {
