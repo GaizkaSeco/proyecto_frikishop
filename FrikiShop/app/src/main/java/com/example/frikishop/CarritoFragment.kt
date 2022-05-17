@@ -30,7 +30,7 @@ class CarritoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         miRecyclerView = binding.recycleView
         miRecyclerView.layoutManager = LinearLayoutManager(activity)
-        miRecyclerView.adapter = Adaptador(this, (activity as MainActivity).miViewModel.carrito, activity as MainActivity)
+        miRecyclerView.adapter = AdaptadorCarrito(this, (activity as MainActivity).miViewModel.carrito, activity as MainActivity)
     }
 
     override fun onDestroyView() {
