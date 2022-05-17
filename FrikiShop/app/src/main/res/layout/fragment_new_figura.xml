@@ -10,54 +10,61 @@
         android:id="@+id/nombreFigura"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="124dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Nombre de la Figura"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/dimensiones"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/dimensiones"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/dimensiones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
         android:ems="10"
-        android:inputType="textPersonName"
         android:hint="Dimensiones ( a x b)"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/coste"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nombreFigura"
-        app:layout_constraintBottom_toTopOf="@+id/coste"/>
+        app:layout_constraintTop_toBottomOf="@+id/nombreFigura" />
 
     <EditText
         android:id="@+id/coste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
         android:ems="10"
         android:hint="Coste"
         android:inputType="textPersonName"
-        app:layout_constraintBaseline_toTopOf="@id/anadirFigura"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/anadirFigura"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dimensiones"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/dimensiones" />
 
     <Button
         android:id="@+id/anadirFigura"
-        android:layout_width="105dp"
-        android:layout_height="46dp"
-        android:layout_marginBottom="176dp"
+        android:layout_width="134dp"
+        android:layout_height="63dp"
         android:text="Añadir Figura"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/coste" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Nueva Figura"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
