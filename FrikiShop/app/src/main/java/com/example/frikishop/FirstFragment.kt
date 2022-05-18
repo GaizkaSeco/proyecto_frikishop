@@ -45,7 +45,12 @@ class FirstFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        menu.findItem(R.id.new_figura)?.isVisible=false
-        menu.findItem(R.id.new_user)?.isVisible=false
+        if ((activity as MainActivity).miViewModel.logedo.rol == "Admin") {
+            menu.findItem(R.id.new_figura)?.isVisible = true
+            menu.findItem(R.id.new_user)?.isVisible = true
+        } else {
+            menu.findItem(R.id.new_figura)?.isVisible = false
+            menu.findItem(R.id.new_user)?.isVisible = false
+        }
     }
 }

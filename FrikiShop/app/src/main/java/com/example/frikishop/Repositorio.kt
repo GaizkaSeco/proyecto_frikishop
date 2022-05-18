@@ -1,6 +1,7 @@
 package com.example.frikishop
 
 import androidx.annotation.WorkerThread
+import androidx.lifecycle.LiveData
 import kotlinx.coroutines.flow.Flow
 
 class Repositorio(val miDao: DaoAplicacion) {
@@ -14,6 +15,10 @@ class Repositorio(val miDao: DaoAplicacion) {
 
     fun BuscarUser(nombre: String, contrasena: String):Flow<Int> {
         return miDao.BuscarUser(nombre, contrasena)
+    }
+
+    fun BuscarLoggin(id: Int): Flow<User> {
+        return miDao.BuscarLoggin(id)
     }
 
     fun BuscarFigura(posicion: Int): Flow<Figura> {

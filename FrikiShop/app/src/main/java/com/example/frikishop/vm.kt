@@ -5,6 +5,8 @@ import kotlinx.coroutines.launch
 import java.lang.IllegalArgumentException
 
 class vm(private val miRepositiorio:Repositorio): ViewModel() {
+    lateinit var logedo: User
+    lateinit var usuario: LiveData<User>
     val figura: LiveData<List<Figura>> = miRepositiorio.listaFiguras.asLiveData()
     val users: LiveData<List<User>> = miRepositiorio.listaUsers.asLiveData()
     lateinit var existe: LiveData<Int>
@@ -14,6 +16,10 @@ class vm(private val miRepositiorio:Repositorio): ViewModel() {
 
     fun BuscarUser (nombre: String, contrasena: String) = viewModelScope.launch {
         existe= miRepositiorio.BuscarUser(nombre, contrasena).asLiveData()
+    }
+
+    fun BuscarLoggin (id: Int) = viewModelScope.launch {
+        usuario = miRepositiorio.BuscarLoggin(id).asLiveData()
     }
 
     fun BuscarFigura (posicion: Int) = viewModelScope.launch {

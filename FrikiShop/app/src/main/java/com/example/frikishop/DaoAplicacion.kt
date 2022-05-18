@@ -26,6 +26,9 @@ interface DaoAplicacion {
     @Query("SELECT COUNT(*) FROM tabla_users WHERE nombre LIKE :nombre AND contrasena LIKE :contrasena")
     fun BuscarUser(nombre: String, contrasena: String): Flow<Int>
 
+    @Query("SELECT * FROM tabla_users WHERE id LIKE :id")
+    fun BuscarLoggin(id: Int): Flow<User>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun InsertUser(word: User)
 
