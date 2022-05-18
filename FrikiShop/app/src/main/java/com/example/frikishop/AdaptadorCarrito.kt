@@ -4,9 +4,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 
@@ -18,8 +16,8 @@ class AdaptadorCarrito(var fragmento: Fragment, var carrito: List<Figura>, var a
         var posicion:Int =-1
         init{
             textNombre = v.findViewById(R.id.textNombre)
-            textCoste = v.findViewById(R.id.textCoste)
-            textDiametro = v.findViewById(R.id.textDiametro)
+            textCoste = v.findViewById(R.id.textRol)
+            textDiametro = v.findViewById(R.id.textContrasena)
         }
     }
 

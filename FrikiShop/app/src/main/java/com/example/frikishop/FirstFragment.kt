@@ -28,6 +28,7 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvBienvenida.text = "Bienvenid@ " + (activity as MainActivity).miViewModel.logedo.nombre
 
         binding.botonComprar.setOnClickListener {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)

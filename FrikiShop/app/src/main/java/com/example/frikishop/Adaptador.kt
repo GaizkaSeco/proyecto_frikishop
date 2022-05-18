@@ -1,6 +1,5 @@
 package com.example.frikishop
 
-import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class Adaptador(var fragmento: Fragment, var figuras: List<Figura>, var actividad: MainActivity): RecyclerView.Adapter<Adaptador.ViewHolder>() {
@@ -22,9 +19,9 @@ class Adaptador(var fragmento: Fragment, var figuras: List<Figura>, var activida
         var buttonAnadir: Button
         init{
             textNombre = v.findViewById(R.id.textNombre)
-            textCoste = v.findViewById(R.id.textCoste)
-            textDiametro = v.findViewById(R.id.textDiametro)
-            buttonAnadir = v.findViewById(R.id.buttonAnadir)
+            textCoste = v.findViewById(R.id.textRol)
+            textDiametro = v.findViewById(R.id.textContrasena)
+            buttonAnadir = v.findViewById(R.id.buttonEliminar)
             buttonAnadir.setOnClickListener() {
                 actividad.miViewModel.BuscarFigura(posicion)
                 actividad.miViewModel.guardar.observe(actividad){

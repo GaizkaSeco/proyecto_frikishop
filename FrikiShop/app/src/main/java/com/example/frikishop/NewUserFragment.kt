@@ -41,6 +41,10 @@ class NewUserFragment : Fragment() {
                 }
             }
         }
+
+        binding.botonVerUsuarios.setOnClickListener {
+            findNavController().navigate(R.id.action_newUserFragment_to_mostrarUsersFragment)
+        }
     }
 
     override fun onDestroyView() {

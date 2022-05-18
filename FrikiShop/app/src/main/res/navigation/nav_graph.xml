@@ -60,6 +60,9 @@
         <action
             android:id="@+id/action_newUserFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_newUserFragment_to_mostrarUsersFragment"
+            app:destination="@id/mostrarUsersFragment" />
     </fragment>
     <fragment
         android:id="@+id/newFiguraFragment"
@@ -75,4 +78,13 @@
         android:name="com.example.frikishop.LayoutContenedor"
         android:label="fragment_layout_contenedor"
         tools:layout="@layout/fragment_layout_contenedor" />
+    <fragment
+        android:id="@+id/mostrarUsersFragment"
+        android:name="com.example.frikishop.MostrarUsersFragment"
+        android:label="fragment_mostrar_users"
+        tools:layout="@layout/fragment_mostrar_users" >
+        <action
+            android:id="@+id/action_mostrarUsersFragment_to_newUserFragment"
+            app:destination="@id/newUserFragment" />
+    </fragment>
 </navigation>
