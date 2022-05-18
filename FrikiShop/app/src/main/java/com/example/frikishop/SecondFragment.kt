@@ -60,7 +60,6 @@ class SecondFragment : Fragment() {
 
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
-        if ()
         menu.findItem(R.id.new_figura)?.isVisible=false
         menu.findItem(R.id.new_user)?.isVisible=false
     }

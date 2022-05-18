@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.security.keystore.UserPresenceUnavailableException
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -45,6 +46,12 @@ class LoginFragment : Fragment() {
             }
 
         }
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.new_figura)?.isVisible=false
+        menu.findItem(R.id.new_user)?.isVisible=false
     }
 
 }
