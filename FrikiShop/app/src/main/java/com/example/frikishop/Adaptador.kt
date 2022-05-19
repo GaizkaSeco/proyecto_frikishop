@@ -19,9 +19,9 @@ class Adaptador(var fragmento: Fragment, var figuras: List<Figura>, var activida
         var buttonAnadir: Button
         init{
             textNombre = v.findViewById(R.id.textNombre)
-            textCoste = v.findViewById(R.id.textRol)
-            textDiametro = v.findViewById(R.id.textContrasena)
-            buttonAnadir = v.findViewById(R.id.buttonEliminar)
+            textCoste = v.findViewById(R.id.textCoste)
+            textDiametro = v.findViewById(R.id.textDiametro)
+            buttonAnadir = v.findViewById(R.id.buttonAnadir)
             buttonAnadir.setOnClickListener() {
                 actividad.miViewModel.BuscarFigura(posicion)
                 actividad.miViewModel.guardar.observe(actividad){

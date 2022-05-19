@@ -4,46 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ComprarFragment">
+    tools:context=".MostrarFigurasFragment">
 
 
     <TextView
         android:id="@+id/tvFiguras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/carrito"
+        android:text="Figuras"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@id/recyclerView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/botonSeguirComprando"
-        android:layout_width="145dp"
-        android:layout_height="65dp"
-        android:text="@string/seguir_comprando"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/botonFinalizarCompra"
-        app:layout_constraintHorizontal_bias="0.48"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
-    <Button
-        android:id="@+id/botonFinalizarCompra"
-        android:layout_width="145dp"
-        android:layout_height="65dp"
-        android:text="@string/finalizar_compra"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/botonSeguirComprando"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="409dp"
         android:layout_height="495dp"
-        app:layout_constraintBottom_toTopOf="@id/botonFinalizarCompra"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvFiguras" />

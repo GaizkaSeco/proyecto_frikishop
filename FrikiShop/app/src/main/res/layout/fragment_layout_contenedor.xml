@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.259" />
 
     <TextView
-        android:id="@+id/textContrasena"
+        android:id="@+id/textCoste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.506" />
 
     <TextView
-        android:id="@+id/textRol"
+        android:id="@+id/textDiametro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.753" />
 
     <Button
-        android:id="@+id/buttonEliminar"
+        android:id="@+id/buttonAnadir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="200dp"

@@ -22,12 +22,12 @@ class AdaptadorListaUsers(var fragmento: Fragment, var users: List<User>, var ac
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewtype: Int): ViewHolder {
-        val v= LayoutInflater.from(parent.context).inflate(R.layout.fragment_layout_contenedor_usuarios, parent, false)
+        val v= LayoutInflater.from(parent.context).inflate(R.layout.fragment_mostrar_lista_users_contenedor, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Log.d("figuras",users[position].nombre)
+        Log.d("users",users[position].nombre)
         holder.textNombre.text=users[position].nombre
         holder.textContrasena.text=users[position].contrasena
         holder.textRol.text=users[position].rol
