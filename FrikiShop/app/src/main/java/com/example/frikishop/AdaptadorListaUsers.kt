@@ -10,12 +10,12 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorListaUsers(var fragmento: Fragment, var users: List<User>, var actividad: MainActivity): RecyclerView.Adapter<AdaptadorListaUsers.ViewHolder>() {
     inner class ViewHolder(v: View): RecyclerView.ViewHolder(v){
-        var textNombre: TextView
+        var textUser: TextView
         var textContrasena: TextView
         var textRol: TextView
         var posicion:Int =-1
         init{
-            textNombre = v.findViewById(R.id.textNombre)
+            textUser = v.findViewById(R.id.textUser)
             textContrasena = v.findViewById(R.id.textContrasena)
             textRol = v.findViewById(R.id.textRol)
         }
@@ -28,7 +28,7 @@ class AdaptadorListaUsers(var fragmento: Fragment, var users: List<User>, var ac
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d("users",users[position].nombre)
-        holder.textNombre.text=users[position].nombre
+        holder.textUser.text=users[position].nombre
         holder.textContrasena.text=users[position].contrasena
         holder.textRol.text=users[position].rol
         holder.posicion=users[position].id

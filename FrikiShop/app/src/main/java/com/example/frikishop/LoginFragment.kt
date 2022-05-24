@@ -2,6 +2,7 @@ package com.example.frikishop
 
 import android.os.Bundle
 import android.security.keystore.UserPresenceUnavailableException
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.Menu
@@ -26,7 +27,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        Log.d("ERROR", "Login")
         setHasOptionsMenu(true)
 
         binding.botonIniciar.setOnClickListener {

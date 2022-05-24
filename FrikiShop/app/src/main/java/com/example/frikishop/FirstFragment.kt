@@ -1,11 +1,10 @@
 package com.example.frikishop
 
 import android.os.Bundle
+import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.Menu
-import android.view.View
-import android.view.ViewGroup
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.frikishop.databinding.FragmentFirstBinding
 
@@ -28,6 +27,8 @@ class FirstFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.d("error", "fragmento si")
+        setHasOptionsMenu(true)
         binding.tvBienvenida.text = "Bienvenid@ " + (activity as MainActivity).miViewModel.logedo.nombre
 
         binding.botonComprar.setOnClickListener {
@@ -44,8 +45,19 @@ class FirstFragment : Fragment() {
         _binding = null
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //navHost = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment
+        when (item.itemId) {
+            R.id.new_figura -> findNavController().navigate(R.id.action_FirstFragment_to_newFiguraFragment)
+            R.id.new_user -> findNavController().navigate(R.id.action_FirstFragment_to_newUserFragment)
+            else -> super.onOptionsItemSelected(item)
+        }
+        return true
+    }
+
     override fun onPrepareOptionsMenu(menu: Menu) {
         super.onPrepareOptionsMenu(menu)
+        Log.d("permiso_usuario",(activity as MainActivity).miViewModel.logedo.rol )
         if ((activity as MainActivity).miViewModel.logedo.rol == "Admin") {
             menu.findItem(R.id.new_figura)?.isVisible = true
             menu.findItem(R.id.new_user)?.isVisible = true

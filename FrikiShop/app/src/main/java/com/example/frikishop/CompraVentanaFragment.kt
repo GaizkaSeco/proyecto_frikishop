@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.frikishop.databinding.FragmentCarritoBinding
 import com.example.frikishop.databinding.FragmentCompraVentanaBinding
 import com.example.frikishop.databinding.FragmentNewUserBinding
 
@@ -15,24 +16,24 @@ class CompraVentanaFragment : Fragment() {
     private var _binding: FragmentCompraVentanaBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_compra_ventana, container, false)
+
+        _binding = FragmentCompraVentanaBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonComprar.setOnClickListener {
-            if (binding.tvNombre.text.isNotEmpty() && binding.numeroTargeta.text.isNotEmpty() && binding.fechaTargeta.text.isNotEmpty() && binding.csvTargeta.text.isNotEmpty()) {
-                //anadir el pedido y terminado.
+            if (binding.tvNombre.text.isNotEmpty() && binding.numeroTarjeta.text.isNotEmpty() && binding.fechaTarjeta.text.isNotEmpty() && binding.ccvTargeta.text.isNotEmpty()) {
+                val pedido = Pedido(total = "0", titular = binding.tvNombre.text.toString(), tarjeta = binding.numeroTarjeta.text.toString(), ccv = binding.ccvTargeta.toString().toInt(), fecha_caducidad = binding.fechaTarjeta.text.toString())
+                (activity as MainActivity).miViewModel.Insertar(pedido)
+                Toast.makeText(activity, "Añadido Correctamente", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_compraVentanaFragment_to_FirstFragment)
             }
         }
     }

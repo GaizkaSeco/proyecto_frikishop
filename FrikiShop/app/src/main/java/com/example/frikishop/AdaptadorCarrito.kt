@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.RecyclerView
 
 class AdaptadorCarrito(var fragmento: Fragment, var carrito: List<Figura>, var actividad: MainActivity): RecyclerView.Adapter<AdaptadorCarrito.ViewHolder>() {
     inner class ViewHolder(v: View): RecyclerView.ViewHolder(v){
-        var textNombre: TextView
+        var textFigura: TextView
         var textCoste: TextView
         var textDiametro: TextView
         var posicion:Int =-1
         init{
-            textNombre = v.findViewById(R.id.textNombre)
-            textCoste = v.findViewById(R.id.textDiametro)
-            textDiametro = v.findViewById(R.id.textCoste)
+            textFigura = v.findViewById(R.id.textFigura)
+            textCoste = v.findViewById(R.id.textDiame)
+            textDiametro = v.findViewById(R.id.textCost)
         }
     }
 
@@ -28,7 +28,7 @@ class AdaptadorCarrito(var fragmento: Fragment, var carrito: List<Figura>, var a
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Log.d("figuras",carrito[position].nombre)
-        holder.textNombre.text=carrito[position].nombre
+        holder.textFigura.text=carrito[position].nombre
         holder.textDiametro.text=carrito[position].dimensiones
         holder.textCoste.text=carrito[position].coste.toString()
         holder.posicion=carrito[position].id

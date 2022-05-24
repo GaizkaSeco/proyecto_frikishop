@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.frikishop.databinding.FragmentCarritoBinding
@@ -31,6 +32,10 @@ class CarritoFragment : Fragment() {
         miRecyclerView = binding.recycleView
         miRecyclerView.layoutManager = LinearLayoutManager(activity)
         miRecyclerView.adapter = AdaptadorCarrito(this, (activity as MainActivity).miViewModel.carrito, activity as MainActivity)
+
+        binding.buttonPagar.setOnClickListener {
+            findNavController().navigate(R.id.action_carritoFragment_to_compraVentanaFragment)
+        }
     }
 
     override fun onDestroyView() {

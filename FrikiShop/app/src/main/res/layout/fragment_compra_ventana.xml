@@ -13,64 +13,71 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="48dp"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/numeroTargeta"
+        android:hint="Titular de la targeta"
+        app:layout_constraintBottom_toTopOf="@+id/numeroTarjeta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textPago" />
 
     <EditText
-        android:id="@+id/fechaTargeta"
+        android:id="@+id/fechaTarjeta"
         android:layout_width="120dp"
         android:layout_height="48dp"
         android:ems="10"
+        android:hint="Fecha de caducidad"
         android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintBottom_toTopOf="@+id/buttonComprar"
-        app:layout_constraintEnd_toStartOf="@+id/csvTargeta"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/numeroTargeta" />
-
-    <EditText
-        android:id="@+id/csvTargeta"
-        android:layout_width="120dp"
-        android:layout_height="48dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintBottom_toTopOf="@+id/buttonComprar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/fechaTargeta"
-        app:layout_constraintTop_toBottomOf="@+id/numeroTargeta" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ccvTargeta" />
+
+    <EditText
+        android:id="@+id/ccvTargeta"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:hint="CCV"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/fechaTarjeta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numeroTarjeta" />
 
     <Button
         android:id="@+id/buttonComprar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:text="Comprar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fechaTargeta" />
+        app:layout_constraintTop_toBottomOf="@id/fechaTarjeta" />
 
     <TextView
         android:id="@+id/textPago"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pago"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        android:text="Realizar pago"
+        android:textSize="34sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvNombre"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/numeroTargeta"
+        android:id="@+id/numeroTarjeta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="Número de la tarjeta"
         android:ems="10"
         android:inputType="numberSigned"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/fechaTargeta"
+        app:layout_constraintBottom_toTopOf="@+id/ccvTargeta"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNombre" />

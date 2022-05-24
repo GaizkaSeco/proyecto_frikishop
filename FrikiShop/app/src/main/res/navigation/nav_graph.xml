@@ -8,7 +8,6 @@
     <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.frikishop.FirstFragment"
-        android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
         <action
@@ -24,7 +23,7 @@
     <fragment
         android:id="@+id/SecondFragment"
         android:name="com.example.frikishop.SecondFragment"
-        android:label="@string/second_fragment_label"
+        android:label="Figuras"
         tools:layout="@layout/fragment_second">
 
         <action
@@ -37,8 +36,8 @@
     <fragment
         android:id="@+id/loginFragment2"
         android:name="com.example.frikishop.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment2_to_FirstFragment"
             app:destination="@id/FirstFragment" />
@@ -46,8 +45,8 @@
     <fragment
         android:id="@+id/carritoFragment"
         android:name="com.example.frikishop.CarritoFragment"
-        android:label="fragment_carrito"
-        tools:layout="@layout/fragment_carrito" >
+        android:label="Carrito"
+        tools:layout="@layout/fragment_carrito">
         <action
             android:id="@+id/action_carritoFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
@@ -58,8 +57,8 @@
     <fragment
         android:id="@+id/newUserFragment"
         android:name="com.example.frikishop.NewUserFragment"
-        android:label="fragment_new_user"
-        tools:layout="@layout/fragment_new_user" >
+        android:label="Nuevo Usuario"
+        tools:layout="@layout/fragment_new_user">
         <action
             android:id="@+id/action_newUserFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
@@ -70,8 +69,8 @@
     <fragment
         android:id="@+id/newFiguraFragment"
         android:name="com.example.frikishop.NewFiguraFragment"
-        android:label="fragment_new_figura"
-        tools:layout="@layout/fragment_new_figura" >
+        android:label="Nueva Figura"
+        tools:layout="@layout/fragment_new_figura">
         <action
             android:id="@+id/action_newFiguraFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
@@ -87,8 +86,8 @@
     <fragment
         android:id="@+id/mostrarUsersFragment"
         android:name="com.example.frikishop.MostrarUsersFragment"
-        android:label="fragment_mostrar_users"
-        tools:layout="@layout/fragment_mostrar_users" >
+        android:label="Usuarios"
+        tools:layout="@layout/fragment_mostrar_users">
         <action
             android:id="@+id/action_mostrarUsersFragment_to_newUserFragment"
             app:destination="@id/newUserFragment" />
@@ -96,8 +95,8 @@
     <fragment
         android:id="@+id/mostrarFigurasFragment"
         android:name="com.example.frikishop.MostrarFigurasFragment"
-        android:label="fragment_mostrar_figuras"
-        tools:layout="@layout/fragment_mostrar_figuras" >
+        android:label="Figuras"
+        tools:layout="@layout/fragment_mostrar_figuras">
         <action
             android:id="@+id/action_mostrarFigurasFragment_to_newFiguraFragment"
             app:destination="@id/newFiguraFragment" />
@@ -105,10 +104,10 @@
     <fragment
         android:id="@+id/compraVentanaFragment"
         android:name="com.example.frikishop.CompraVentanaFragment"
-        android:label="fragment_compra_ventana"
-        tools:layout="@layout/fragment_compra_ventana" >
+        android:label="Ventana de Pago"
+        tools:layout="@layout/fragment_compra_ventana">
         <action
-            android:id="@+id/action_compraVentanaFragment_to_carritoFragment"
-            app:destination="@id/carritoFragment" />
+            android:id="@+id/action_compraVentanaFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
     </fragment>
 </navigation>
