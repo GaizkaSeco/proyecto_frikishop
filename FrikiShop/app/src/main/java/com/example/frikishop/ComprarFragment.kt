@@ -39,7 +39,7 @@ class ComprarFragment : Fragment() {
             Figura?.let {
                 Log.d("figuras",it.size.toString())
                 misFiguras = it
-                miRecyclerView.adapter = Adaptador(this, misFiguras, activity as MainActivity)
+                miRecyclerView.adapter = AdaptadorCarrito(this, misFiguras, activity as MainActivity)
             }
         }
     }
