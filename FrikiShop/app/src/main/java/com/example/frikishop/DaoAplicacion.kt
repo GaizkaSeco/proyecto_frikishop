@@ -23,7 +23,7 @@ interface DaoAplicacion {
     @Query("SELECT * FROM tabla_users ORDER BY nombre ASC")
     fun MostrarUsers(): Flow<List<User>>
 
-    @Query("SELECT COUNT(*) FROM tabla_users WHERE nombre LIKE :nombre AND contrasena LIKE :contrasena")
+    @Query("SELECT id FROM tabla_users WHERE nombre LIKE :nombre AND contrasena LIKE :contrasena")
     fun BuscarUser(nombre: String, contrasena: String): Flow<Int>
 
     @Query("SELECT * FROM tabla_users WHERE id LIKE :id")

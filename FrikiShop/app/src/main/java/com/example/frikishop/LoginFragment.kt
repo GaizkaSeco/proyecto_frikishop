@@ -33,7 +33,7 @@ class LoginFragment : Fragment() {
         binding.botonIniciar.setOnClickListener {
             (activity as MainActivity).miViewModel.BuscarUser(binding.etUsuario.text.toString(), binding.etContrasena.text.toString())
             (activity as MainActivity).miViewModel.existe.observe(activity as MainActivity){
-                if ( it == 1) {
+                if ( it != null) {
                     (activity as MainActivity).miViewModel.BuscarLoggin(it)
                     (activity as MainActivity).miViewModel.usuario.observe(activity as MainActivity) {
                         (activity as MainActivity).miViewModel.logedo = it

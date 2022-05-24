@@ -30,7 +30,7 @@ class CompraVentanaFragment : Fragment() {
 
         binding.buttonComprar.setOnClickListener {
             if (binding.tvNombre.text.isNotEmpty() && binding.numeroTarjeta.text.isNotEmpty() && binding.fechaTarjeta.text.isNotEmpty() && binding.ccvTargeta.text.isNotEmpty()) {
-                val pedido = Pedido(total = "0", titular = binding.tvNombre.text.toString(), tarjeta = binding.numeroTarjeta.text.toString(), ccv = binding.ccvTargeta.toString().toInt(), fecha_caducidad = binding.fechaTarjeta.text.toString())
+                val pedido = Pedido(total = "0", titular = binding.tvNombre.text.toString(), tarjeta = binding.numeroTarjeta.text.toString(), ccv = binding.ccvTargeta.text.toString().toInt(), fecha_caducidad = binding.fechaTarjeta.text.toString())
                 (activity as MainActivity).miViewModel.Insertar(pedido)
                 Toast.makeText(activity, "Añadido Correctamente", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(R.id.action_compraVentanaFragment_to_FirstFragment)
