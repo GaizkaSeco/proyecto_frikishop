@@ -31,7 +31,7 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var misFiguras: List<Figura> = listOf()
-
+        setHasOptionsMenu(true)
 
         miRecyclerView = binding.recyclerView
         miRecyclerView.layoutManager = LinearLayoutManager(activity)

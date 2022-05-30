@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +31,7 @@ class MostrarUsersFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var misUsers: List<User> = listOf()
+        setHasOptionsMenu(true)
 
         miRecyclerView = binding.recyclerView2
         miRecyclerView.layoutManager = LinearLayoutManager(activity)
@@ -46,5 +48,11 @@ class MostrarUsersFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.new_figura)?.isVisible=false
+        menu.findItem(R.id.new_user)?.isVisible=false
     }
 }

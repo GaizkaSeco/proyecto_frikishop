@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -27,6 +28,7 @@ class CompraVentanaFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setHasOptionsMenu(true)
 
         binding.buttonComprar.setOnClickListener {
             if (binding.tvNombre.text.isNotEmpty() && binding.numeroTarjeta.text.isNotEmpty() && binding.fechaTarjeta.text.isNotEmpty() && binding.ccvTargeta.text.isNotEmpty()) {
@@ -36,5 +38,11 @@ class CompraVentanaFragment : Fragment() {
                 findNavController().navigate(R.id.action_compraVentanaFragment_to_FirstFragment)
             }
         }
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        super.onPrepareOptionsMenu(menu)
+        menu.findItem(R.id.new_figura)?.isVisible=false
+        menu.findItem(R.id.new_user)?.isVisible=false
     }
 }
